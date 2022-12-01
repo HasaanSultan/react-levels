@@ -5,11 +5,11 @@ type levels =
   | "SHARE Gold"
   | "SHARE Platinum";
 
-type levelKey = "blue" | "blue" | "blue" | "";
+type levelKey = "blue" | "bronze" | "sliver" | "gold" | "platinum";
 
-type levelType = {
+export type levelType = {
   name: levels;
-  key: string;
+  key: levelKey;
   bonus: number;
   lowerLimit: number;
   upperLimit: number;
@@ -17,7 +17,7 @@ type levelType = {
 };
 
 type userObjType = {
-  currentLevel: levels;
+  currentLevel: levelKey;
   rides: number;
   totalMiles: string;
   co2Saved: string;
@@ -35,7 +35,7 @@ export const allLevels: levelType[] = [
   },
   {
     name: "SHARE Bronze",
-    key: "blue",
+    key: "bronze",
     bonus: 10,
     extraBonus: 5,
     lowerLimit: 6,
@@ -43,7 +43,7 @@ export const allLevels: levelType[] = [
   },
   {
     name: "SHARE Sliver",
-    key: "blue",
+    key: "sliver",
     bonus: 20,
     extraBonus: 5,
     lowerLimit: 11,
@@ -51,7 +51,7 @@ export const allLevels: levelType[] = [
   },
   {
     name: "SHARE Gold",
-    key: "blue",
+    key: "gold",
     bonus: 30,
     extraBonus: 5,
     lowerLimit: 15,
@@ -59,7 +59,7 @@ export const allLevels: levelType[] = [
   },
   {
     name: "SHARE Platinum",
-    key: "blue",
+    key: "platinum",
     bonus: 40,
     extraBonus: 5,
     lowerLimit: 21,
@@ -67,8 +67,8 @@ export const allLevels: levelType[] = [
   },
 ];
 
-const userObj: userObjType = {
-  currentLevel: "SHARE Bronze",
+export const userObj: userObjType = {
+  currentLevel: "bronze",
   rides: 1620,
   totalMiles: "22k mi",
   co2Saved: "10k lbs",
