@@ -7,7 +7,10 @@ export interface progressProps extends ProgressProps {
 }
 
 const ProgressBar: React.FC<progressProps> = (props) => {
-  return <CustomProgressBar {...props} />;
+  const { disabled } = props;
+  return (
+    <CustomProgressBar {...props} className={disabled ? "disabled" : ""} />
+  );
 };
 
 export default ProgressBar;

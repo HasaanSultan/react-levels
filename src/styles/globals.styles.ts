@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle<{ theme: ThemeProps }>`
     color: ${({ theme }) => theme.inputText};
     font-family: DM Sa;
     font-style: normal;
+
+    .flex{
+      display:flex ;
+    }
   }
 
   #root {

@@ -5,18 +5,16 @@ type levels =
   | "SHARE Gold"
   | "SHARE Platinum";
 
-type levelKey = "blue" | "bronze" | "sliver" | "gold" | "platinum";
+export type levelKey = "blue" | "bronze" | "sliver" | "gold" | "platinum";
 
 export type levelType = {
   name: levels;
   key: levelKey;
-  bonus: number;
-  lowerLimit: number;
-  upperLimit: number;
   extraBonus: number;
+  bonus?: number;
 };
 
-type userObjType = {
+export type userObjType = {
   currentLevel: levelKey;
   rides: number;
   totalMiles: string;
@@ -28,42 +26,31 @@ export const allLevels: levelType[] = [
   {
     name: "SHARE Blue",
     key: "blue",
-    bonus: 10,
     extraBonus: 5,
-    lowerLimit: 0,
-    upperLimit: 5,
   },
   {
     name: "SHARE Bronze",
     key: "bronze",
-    bonus: 10,
+    bonus: 20,
     extraBonus: 5,
-    lowerLimit: 6,
-    upperLimit: 10,
   },
   {
     name: "SHARE Sliver",
     key: "sliver",
-    bonus: 20,
+    bonus: 30,
     extraBonus: 5,
-    lowerLimit: 11,
-    upperLimit: 15,
   },
   {
     name: "SHARE Gold",
     key: "gold",
-    bonus: 30,
+    bonus: 40,
     extraBonus: 5,
-    lowerLimit: 15,
-    upperLimit: 20,
   },
   {
     name: "SHARE Platinum",
     key: "platinum",
-    bonus: 40,
+    bonus: 50,
     extraBonus: 5,
-    lowerLimit: 21,
-    upperLimit: 30,
   },
 ];
 
